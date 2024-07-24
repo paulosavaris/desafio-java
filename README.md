@@ -1,6 +1,7 @@
 # Desafio Programador Fullstack Unoesc - Java
 
 Esse é o nosso desafio para a vaga de programador fullstack Java na [Unoesc](https://www.unoesc.edu.br/). Serão testadas as habilidades e qualidade de código ao transformar requisitos limitados em uma aplicação web.
+Faça o fork deste repositório e implemente o desafio. 
 
 ## DESAFIO
 
