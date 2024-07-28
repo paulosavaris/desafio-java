@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset='utf-8'>
+    <title>Login</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta http-equiv="content-language" content="pt-br" />
+    <meta name="robots" content="index, follow" />
+    <link rel="stylesheet" type="text/css" href="/css/login.css">
+</head>
+
+<body>
+    
+    <div class="container" id="container">
+
+	<div class="form-container sign-in-container">
+		<form action="/login" method="post">
+			<h1>Entrar</h1>
+			<input type="text" name="username" placeholder="Email" />
+			<input type="password" name="password" placeholder="Password" />
+			<button type="submit">Entrar</button>
+			<p th:if="${param.error}" class="error-message">Credenciais inválidas, tente novamente.</p>
+		</form>
+	</div>
+
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-right">
+				<h1>Ola!</h1>
+                <p></p>
+			</div>
+		</div>
+	</div>
+    </div>
+    <script src="/scripts/loginFlip.js"></script>
+</body>
+</html>
