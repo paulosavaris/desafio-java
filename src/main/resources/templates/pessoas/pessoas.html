@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${pageTitle}"></title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div th:replace="~{fragments/header :: header}"></div>
+    
+    <div class="container">
+        <div class="cards-container">
+            <!-- Loop pelas pessoas -->
+            <th:block th:each="pessoa : ${pessoas}">
+                <div class="card">
+                    <div class="card_header" th:text="${pessoa.nome}"></div>
+                    <div class="card_container">
+                        <div class="card_content">
+                            <div class="list-cards">
+                                <div class="blocos">
+                                    <h4 class="h2_membros">CPF</h4>
+                                    <p th:text="${pessoa.cpf}"></p>
+                                </div>
+
+                                <div class="blocos">
+                                    <h4 class="h2_membros">Time</h4>
+                                    <p th:text="${pessoa.time != null ? pessoa.time.nome : 'Não atribuído'}"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </th:block>
+        </div>
+    </div>
+</body>
+</html>

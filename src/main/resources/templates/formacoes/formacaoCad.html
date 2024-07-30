@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset='utf-8'>
+    <title>Cadastro de Formação</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta http-equiv="content-language" content="pt-br" />
+    <meta name="robots" content="index, follow" />
+    <link rel="stylesheet" type="text/css" href="/css/cadastro.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="cadastro-form">
+            <h2>Cadastro de Formação</h2>
+
+            <form method="post" action="/formacoes/cadastro">
+                <!-- Caminho da ação do formulário para cadastrar uma nova formação -->
+                
+                <div class="form-group">
+                    <label for="CadNomeCurso">Nome do Curso</label>
+                    <input type="text" id="CadNomeCurso" name="nomeCurso" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="CadNivelCurso">Nível do Curso</label>
+                    <select id="CadNivelCurso" name="nivelCurso" required>
+                        <option value="ENSINO_MEDIO">Ensino Médio</option>
+                        <option value="TECNICO">Técnico</option>
+                        <option value="BACHARELADO">Bacharelado</option>
+                        <option value="ESPECIALIZACAO">Especialização</option>
+                        <option value="MESTRADO">Mestrado</option>
+                        <option value="DOUTORADO">Doutorado</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="CadDataConclusao">Data de Conclusão</label>
+                    <input type="date" id="CadDataConclusao" name="dataConclusao" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="CadInstituicaoEnsino">Nome da Instituição de Ensino</label>
+                    <input type="text" id="CadInstituicaoEnsino" name="instituicaoEnsino" required>
+                </div>
+
+
+                <div class="error-message">
+                    <!-- Exiba mensagens de erro aqui, se necessário -->
+                    <p th:text="${param.errorC}" style="color: red; font-size: 12px;"></p>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" value="Cadastrar">Cadastrar</button>
+                </div>
+            </form>
+
+            <div class="success-message">
+                <p th:text="${session.cadastroSucessoFormacao}" style="color: green; font-size: 12px;"></p>
+            </div>
+
+            <div class="form-group">
+                <a href="/formacoes">
+                    <button type="button">Retornar</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -6,10 +6,31 @@
 <body>
     <div th:replace="~{fragments/header :: header}"></div>
     <!-- Conteúdo da página de times -->
-    <div class="form-container sign-in-container">
+    <div class="container">
+        <div class="cards-container">
 
-			<h1>Entrar</h1>
+            <!-- Loop pelos times -->
+            <th:block th:each="time : ${times}">
+                <div class="card">
+                    <div class="card_header" th:text="${time.nome}"></div>
+                    <div class="card_container">
+                        <div class="card_content">
+                            <!-- Lista de pessoas integrantes do time -->
+                            <th:block th:each="pessoa : ${time.pessoas}">
+                                <div class="list-cards">
+                                    <div class="blocos">
+                                        <h4 class="h2_membros">Nome</h4>
+                                        <p th:text="${pessoa.nome}"></p>
+                                    </div>
 
-	</div>
+                                </div>
+                            </th:block>
+                        </div>
+                    </div>
+                </div>
+            </th:block>
+        </div>
+    </div>
 </body>
 </html>
+

@@ -2,11 +2,14 @@ package br.edu.unoesc.entities;
 
 import jakarta.persistence.*;
 // import jakarta.validation.constraints.NotNull;
+import lombok.Data;
 
 import java.util.Date;
 
 import org.antlr.v4.runtime.misc.NotNull;
 
+@SuppressWarnings("deprecation")
+@Data
 @Entity
 public class Formacao {
     @Id

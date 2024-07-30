@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset='utf-8'>
+    <title>Fragmentos</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta http-equiv="content-language" content="pt-br" />
+    <meta name="robots" content="index, follow" />
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+    <div th:fragment="cardFragment(items, itemName, itemAttributes)">
+        <div class="cards-container">
+            <!-- Loop pelos itens -->
+            <th:block th:each="item : ${items}">
+                <div class="card">
+                    <div class="card_header" th:text="${item[itemName]}"></div>
+                    <div class="card_container">
+                        <div class="card_content">
+                            <!-- Loop pelos atributos do item -->
+                            <th:block th:each="attribute : ${itemAttributes}">
+                                <div class="list-cards">
+                                    <div class="blocos">
+                                        <h4 class="h2_membros" th:text="${attribute.label}"></h4>
+                                        <p th:text="${item[attribute.value]}"></p>
+                                    </div>
+                                </div>
+                            </th:block>
+                        </div>
+                    </div>
+                </div>
+            </th:block>
+        </div>
+    </div>
+</body>
+</html>
