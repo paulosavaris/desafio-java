@@ -33,7 +33,7 @@ public class WebSecurityConfig {
                 .formLogin((form) -> form
                         .loginPage("/login")
                         .failureUrl("/login?error=true")
-                        .defaultSuccessUrl("/", true) //a definir pagina de redirecionamento
+                        .defaultSuccessUrl("/times", true) //a definir pagina de redirecionamento
                         .permitAll())
                 .logout((logout) -> logout.permitAll())
                 .sessionManagement()
